@@ -1,0 +1,34 @@
+name: Dot File Quality
+on:
+  push:
+  pull_request:
+  workflow_call:
+
+jobs:
+  dotFiles:
+    name: Dot File Quality
+    runs-on: ubuntu-latest
+    steps:
+      - name: Clone the repository
+        uses: actions/checkout@v4
+      - name: Check spelling
+        uses: streetsidesoftware/cspell-action@v6
+        with:
+          check_dot_files: true
+          inline: error
+          incremental_files_only: false
+          files: |
+            **/*
+            !.git/
+      - name: Check for Markdown lint
+        uses: nosborn/github-action-markdown-cli@v3
+        with:
+          files: .
+          dot: true
+          ignore_files: node_modules
+      - name: Check formatting
+        uses: creyD/prettier_action@v4.3
+        with:
+          dry: true
+          prettier_options: >
+            --check ./**/*.{md,json,yaml,yml}

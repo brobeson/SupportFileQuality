@@ -1,6 +1,6 @@
 # Support File Quality
 
-[![Quality Control](https://github.com/brobeson/SupportFileQuality/actions/workflows/support_files.yaml/badge.svg)](https://github.com/brobeson/SupportFileQuality/actions/workflows/support_files.yaml)
+[![Workflow Quality](https://github.com/brobeson/SupportFileQuality/actions/workflows/support_files.yaml/badge.svg)](https://github.com/brobeson/SupportFileQuality/actions/workflows/support_files.yaml)
 [![GitHub Release](https://img.shields.io/github/v/release/brobeson/SupportFileQuality?sort=semver&logo=github&label=Release)](https://github.com/brobeson/SupportFileQuality/releases/latest)
 
 This is a reusable workflow to ensure quality in project support files and tool configuration files (dot files).
@@ -29,9 +29,14 @@ The workflow runs the steps described in the following sections.
    If you use [VS Code](https://code.visualstudio.com/), you can use the [Code Spell Checker extension](https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker).
 1. **Markdown Lint**  
    The workflow also runs [Markdownlint](https://github.com/DavidAnson/markdownlint) on all Markdown files in the repository.
-   Use a [Markdownlint configuration](https://github.com/DavidAnson/markdownlint?tab=readme-ov-file#configuration) in your repository to control Markdownlint's behavior.
-   If you use [VS Code](https://code.visualstudio.com/), you can use the [Markdownlint extension](https://marketplace.visualstudio.com/items?itemName=DavidAnson.vscode-markdownlint) to find mistakes as you edit your Markdown.
-1. **Formatting**  
-   Finally, the workflow runs [Prettier](https://prettier.io) on all Markdown, YAML, JSON, and TypeScript files in the repository.
-   This does not attempt to modify any files.
-   It just reports incorrectly formatted files.
+
+## Issue Tracking
+
+[![GitHub Issues or Pull Requests by label](https://img.shields.io/github/issues/brobeson/SupportFileQuality/bug?logo=github&label=Bugs)](https://github.com/brobeson/SupportFileQuality/issues?q=is%3Aissue+is%3Aopen+label%3Abug)
+[![GitHub Issues or Pull Requests by label](https://img.shields.io/github/issues/brobeson/SupportFileQuality/enhancement?logo=github&label=Enhancements)](https://github.com/brobeson/SupportFileQuality/issues?q=is%3Aissue+is%3Aopen+label%3Aenhancement)
+[![GitHub Issues or Pull Requests by label](https://img.shields.io/github/issues/brobeson/SupportFileQuality/new%20step?logo=github&label=New%20Steps)](https://github.com/brobeson/SupportFileQuality/issues?q=is%3Aopen+is%3Aissue+label%3A%22new+step%22)
+[![GitHub milestone details](https://img.shields.io/github/milestones/progress/brobeson/SupportFileQuality/1?logo=github)](https://github.com/brobeson/SupportFileQuality/milestone/1)
+
+[Report a bug](https://github.com/brobeson/SupportFileQuality/issues/new?assignees=brobeson&labels=bug&projects=&template=bug.yaml) |
+[Request a new step](https://github.com/brobeson/SupportFileQuality/issues/new?assignees=brobeson&labels=new+step&projects=&template=new_step.yaml) |
+[Update an existing step](https://github.com/brobeson/SupportFileQuality/issues/new?assignees=brobeson&labels=enhancement&projects=&template=enhancement.yaml)

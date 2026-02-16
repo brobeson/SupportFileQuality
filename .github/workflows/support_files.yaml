@@ -1,34 +1,25 @@
-name: Dot File Quality
+name: Project Support Quality
 on:
   push:
   pull_request:
   workflow_call:
 
 jobs:
-  dotFiles:
-    name: Dot File Quality
+  staticAnalysis:
+    name: Static Analysis
     runs-on: ubuntu-latest
     steps:
       - name: Clone the repository
         uses: actions/checkout@v4
-      - name: Check spelling
-        uses: streetsidesoftware/cspell-action@v6
+      - name: Check for spelling mistakes
+        uses: streetsidesoftware/cspell-action@v8
         with:
-          check_dot_files: true
           inline: error
           incremental_files_only: false
-          files: |
-            **/*
-            !.git/
-      - name: Check for Markdown lint
-        uses: nosborn/github-action-markdown-cli@v3
-        with:
-          files: .
-          dot: true
-          ignore_files: node_modules
-      - name: Check formatting
-        uses: creyD/prettier_action@v4.3
+      - name: Check for Markdown issues
+        uses: DavidAnson/markdownlint-cli2-action@v22 # cspell:ignore Anson
+      - name: Check formatting with Prettier
+        uses: creyD/prettier_action@v4.6
         with:
           dry: true
-          prettier_options: >
-            --check ./**/*.{md,json,yaml,yml}
+          prettier_options: --check .

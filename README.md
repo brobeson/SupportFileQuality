@@ -13,22 +13,26 @@ Here is an example workflow snippet that calls this workflow:
 
 ```yaml
 jobs:
-  dotFiles:
-    name: Dot File Quality
+  projectFiles:
+    name: Project File Quality
     uses: brobeson/SupportFileQuality/.github/workflows/support_files.yaml@v1
 ```
 
 ## Steps
 
-The workflow runs the steps described in the following sections.
+The workflow runs the following steps.
 
 1. **Spell Check**  
-   The workflow runs [CSpell](https://cspell.org/) on all files in the repository except your _.git/_ directory.
+   The workflow runs [CSpell](https://cspell.org/) on all files in the repository.
    Use a [CSpell configuration](https://cspell.org/configuration/) in your repository to control the spell check behavior.
    You can add CSpell to your IDE to reduce the probability of this step finding errors.
    If you use [VS Code](https://code.visualstudio.com/), you can use the [Code Spell Checker extension](https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker).
 1. **Markdown Lint**  
    The workflow also runs [Markdownlint](https://github.com/DavidAnson/markdownlint) on all Markdown files in the repository.
+   It uses [markdownlint-cli2](https://github.com/DavidAnson/markdownlint-cli2), so you can [configure it](https://github.com/DavidAnson/markdownlint-cli2#configuration).
+1. **Prettier**  
+   Finally, the workflow runs [Prettier](https://prettier.io/) to check formatting of any files in the repository.
+   It does _not_ format and commit changes; it reports files that are incorrectly formatted.
 
 ## Issue Tracking
 

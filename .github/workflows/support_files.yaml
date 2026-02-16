@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Clone the repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
       - name: Check for spelling mistakes
         uses: streetsidesoftware/cspell-action@v8
         with:

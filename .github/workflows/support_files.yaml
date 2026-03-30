@@ -17,7 +17,7 @@ jobs:
           inline: error
           incremental_files_only: false
       - name: Check for Markdown issues
-        uses: DavidAnson/markdownlint-cli2-action@v22 # cspell:ignore Anson
+        uses: DavidAnson/markdownlint-cli2-action@v23 # cspell:ignore Anson
       - name: Check formatting with Prettier
         uses: creyD/prettier_action@v4.6
         with:
